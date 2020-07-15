@@ -1,11 +1,19 @@
 #Требуется представить число в виде произведения простых множителей.
-n = int(input('Введите n '))
-for i in range(1, n+1):
-    if n % i == 0:
-        a = n % i
-        count = 0
-        for j in range(1, a+1):
-            if a % j == 0:
-                count = count + 1
-                if count <= 2:
-                    print(a)
+def simple(c):
+    i = 2
+    while i < c:
+        if c % i == 0:
+            return False
+        i = i+1
+    return True
+
+def main():
+    n = int(input('Введите n '))
+    for j in range(2, n+1):
+        while n % j == 0 and simple(j) == True:
+            if n//j == 1:
+                print(j)
+            else:
+                print(j, end='*')
+            n = n//j
+main()
