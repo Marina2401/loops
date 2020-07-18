@@ -18,7 +18,7 @@ def main():
             s = a * s
             ct = ct + 1
             if ct == n:
-                print(k,'=', s)
+                print(k, '=', s)
             elif ct < n:
                 print(k, end='*')
 
