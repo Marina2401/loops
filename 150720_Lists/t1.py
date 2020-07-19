@@ -12,3 +12,8 @@ print(a)
 
 a.insert(1, 100)
 print(a)
+
+for i in a:
+    if i < 10:
+        a.remove(i)
+print(a)

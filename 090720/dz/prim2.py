@@ -8,18 +8,21 @@ def simple(c):
         i += 1
     return True
 
-def main():
-    n = int(input('Введите количество чисел n '))
+def prod(n):
     s = 1
     ct = 0
-    for k in range(2, 1000000):
+    k = 2
+    while ct < n:
         if simple(k):
-            a = k
-            s = a * s
+            s = k * s
             ct = ct + 1
-            if ct == n:
-                print(k, '=', s)
-            elif ct < n:
-                print(k, end='*')
+        k += 1
+    return s
+
+def main():
+    n = int(input('Введите количество чисел n '))
+    p = prod(n)
+    print(p)
+
 
 main()
