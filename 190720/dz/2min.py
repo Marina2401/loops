@@ -10,27 +10,27 @@ def pr(a):
         print(i, end=' ')
 
 def mi(a, n):
-    mi = sys.maxsize
+    mi1 = sys.maxsize
+    ind = 0
     for i in range(n):
-        if a[i] < mi:
-            mi = a[i]
-    return mi
+        if a[i] < mi1:
+            mi1 = a[i]
+            ind = i
+    mi2 = sys.maxsize
+    for i in range(n):
+        if a[i] < mi2 and i != ind:
+            mi2 = a[i]
 
-def mi2(a, n):
-    c = mi(a, n)
-    a.remove(c)
-    b = mi(a, n-1)
-    return b
+    return mi1, mi2
+
 
 def main():
     n = int(input('Введите количество чисел '))
     a = []
     cr(a, n)
     pr(a)
-    d = mi(a, n)
-    e = mi2(a, n-1)
+    d, e = mi(a, n)
     print()
-    print(d)
-    print(e)
+    print(d, e)
 
 main()

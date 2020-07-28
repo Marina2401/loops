@@ -26,6 +26,9 @@ def main():
     pr(a)
     print()
     c = check(a, n)
-    print(c)
+    if c == 0:
+        print('Ни одно число списка не больше обоих своих соседей')
+    else:
+        print(c)
 
 main()

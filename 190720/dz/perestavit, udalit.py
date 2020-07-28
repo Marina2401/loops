@@ -8,10 +8,13 @@ def cr(a, n):
 def pr(a):
     for i in a:
         print(i, end=' ')
+    print()
 
 def pr2(a, n):
-    for i in range(n, 0, -1):
-        print(a[i-1], end=' ')
+    for i in range(len(a)//2):
+        temp = a[i]
+        a[i] = a[n-1-i]
+        a[n-1-i] = temp
 
 def ma(a):
     ma = -sys.maxsize
@@ -20,36 +23,26 @@ def ma(a):
             ma = i
     return ma
 
-# def pr3(a, n):
-#     k = ma(a)
-#     i = 0
-#     while i < n:
-#         if a[i] == k:
-#             del a[i]
-#             n -= 1
-#         else:
-#             i += 1
-#     return a
+def pr3(a, n):
+    k = ma(a)
+    i = 0
+    while i < n:
+        if a[i] == k:
+            del a[i]
+            n -= 1
+        else:
+            i += 1
 
 def main():
     n = int(input('Введите количество элементов списка '))
     a = []
     cr(a, n)
     pr(a)
-    m = ma(a)
-    print()
+    #m = ma(a)
+    #print()
     pr2(a, n)
-    print()
-    # pr3(a, n)
-    i = 0
-    while i < n:
-        if a[i] == m:
-            del a[i]
-            n -= 1
-        else:
-            i += 1
-    print(a)
-    #a.remove(m)
-    #print(a)
+    pr(a)
+    pr3(a, n)
+    pr(a)
 
 main()

@@ -9,29 +9,25 @@ def cr(a, n):
 def pr(a):
     for i in a:
         print(i, end=' ')
-
-
-def check(a, n, x):
-   i = 0
-   while i < n:
-       if x == a[i]:
-           if a[i] == a[i+1]:
-               return i+2
-           else:
-               return i+1
-       i += 1
+    print()
 
 
 def main():
     n = int(input('Введите количество учеников в классе '))
     a = []
     cr(a, n)
-    a.sort(reverse=True)
     pr(a)
-    print()
     x = int(input('Введите рост ученика в см '))
-    c = check(a, n, x)
-    print(c)
+    if x in a:
+        a.append(x)
+        a.sort(reverse=True)
+        pr(a)
+        print(a.index(x)+2)
+    else:
+        a.append(x)
+        a.sort(reverse=True)
+        pr(a)
+        print(a.index(x)+1)
 
 main()
 
