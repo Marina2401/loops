@@ -5,7 +5,7 @@ import random
 
 def create(a, n):
     for i in range(n):
-        a.append(random.randint(0, 9))
+        a.append(random.randint(0, 9000))
 
 def pr(a):
     for i in a:
@@ -13,7 +13,7 @@ def pr(a):
     print()
 
 def quant(a):
-    for j in range(10):
+    for j in range(9000):
         if a.count(j) != 0:
             print(f'{j}:{a.count(j)}')
 

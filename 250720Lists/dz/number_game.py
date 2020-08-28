@@ -16,29 +16,22 @@ def pr(a):
 
 def sum1(a, n):
     s1 = 0
-    i = 0
-    while i < math.ceil(n/2):
-        if a[i] > a[n-1-i]:
-            s1 = s1 + a[i]
-            del a[i]
-        else:
-            s1 = s1 + a[n-1-i]
-            del a[n-1-i]
-        n -= 2
-    return s1
-
-def sum2(a, n):
     s2 = 0
-    j = 1
-    while j < math.ceil((n-1)/2):
-        if a[j] > a[n-1-j]:
-            s2 = s2 + a[j]
-            del a[j]
+    i = 0
+    while i < n:
+        if a[0] > a[-1]:
+            data = a[0]
+            del a[0]
         else:
-            s2 = s2 + a[n-1-j]
-            del a[n-1-j]
-        n -= 2
-    return s2
+            data = a[-1]
+            del a[-1]
+        pr(a)
+        if i % 2 == 0:
+            s1 = s1 + data
+        else:
+            s2 = s2 + data
+        i += 1
+    return s1, s2
 
 
 def main():
@@ -46,8 +39,7 @@ def main():
     a = []
     create(a, n)
     pr(a)
-    su1 = sum1(a, n)
-    su2 = sum2(a, n)
+    su1, su2 = sum1(a, n)
 
     print(su1, su2)
 

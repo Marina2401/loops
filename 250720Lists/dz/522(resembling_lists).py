@@ -4,26 +4,32 @@
 
 import random
 
-def create(a, b, n, m):
+def create(a, n):
     for i in range(n):
-        a.append(random.randint(0, 2))
+        num = int(input('Введите элемент '))
+        a.append(num)
 
-    for j in range(m):
-        b.append(random.randint(0, 2))
-
-def pr(a, b):
+def pr(a):
     for i in a:
-        print(i, end = ' ')
+        print(i, end=' ')
     print()
-    for j in b:
-        print(j, end = ' ')
-    print()
+
 
 def compare(a, b):
-    if set(a) == set(b):
-        return True
-    else:
-        return False
+    for i in a:
+        if i not in b:
+            return False
+    for j in b:
+        if j not in a:
+            return False
+    return True
+
+
+# def compare(a, b):
+#     if set(a) == set(b):
+#         return True
+#     else:
+#         return False
 
 
 def main():
@@ -31,8 +37,10 @@ def main():
     m = int(input('введите количество элементов второго списка '))
     a = []
     b = []
-    create(a, b, n, m)
-    pr(a, b)
+    create(a, n)
+    pr(a)
+    create(b, m)
+    pr(b)
     c = compare(a, b)
     if c:
         print('Множества похожи')

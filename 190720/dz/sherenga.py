@@ -16,18 +16,28 @@ def main():
     n = int(input('Введите количество учеников в классе '))
     a = []
     cr(a, n)
+    a.sort(reverse=True)
     pr(a)
     x = int(input('Введите рост ученика в см '))
-    if x in a:
-        a.append(x)
-        a.sort(reverse=True)
-        pr(a)
-        print(a.index(x)+2)
+
+    for i in range(n):
+        if x > a[i]:
+            pos = i+1
+            break
     else:
-        a.append(x)
-        a.sort(reverse=True)
-        pr(a)
-        print(a.index(x)+1)
+        pos = n+1
+    print(pos)
+
+    # if x in a:
+    #     a.append(x)
+    #     a.sort(reverse=True)
+    #     pr(a)
+    #     print(a.index(x)+2)
+    # else:
+    #     a.append(x)
+    #     a.sort(reverse=True)
+    #     pr(a)
+    #     print(a.index(x)+1)
 
 main()
 

@@ -1,3 +1,5 @@
+#еще нужно вытащить среднюю температуру за указанную неделю
+
 import random
 import math
 import sys
@@ -11,6 +13,21 @@ def print_list(a):
         print(k, end=' ')
     print()
 
+def max_by_weeks(a):
+    weeks = []
+    count_week = math.ceil(len(a) / 7)
+    for i in range(count_week):
+        start = i * 7
+        end = start + 7
+        if end > len(a):
+            end = len(a)
+        max = -sys.maxsize
+        for j in range(start, end):
+            if a[j] > max:
+                max = a[j]
+
+        weeks.append(max)
+    return weeks
 
 def average_by_weeks(a):
     weeks = []
@@ -21,16 +38,11 @@ def average_by_weeks(a):
         if end > len(a):
             end = len(a)
         sum = 0
-        max = -sys.maxsize
         for j in range(start, end):
             sum += a[j]
-            if a[j] > max:
-                max = a[j]
         avg = round(sum / (end - start), 2)
         weeks.append(avg)
-        weeks.append(max)
     return weeks
-
 
 def main():
     count_day = int(input('кол-во дней: '))
@@ -38,7 +50,9 @@ def main():
     fill_list(temps, count_day)
     print_list(temps)
     avg_weeks = average_by_weeks(temps)
+    max_weeks = max_by_weeks(temps)
     print_list(avg_weeks)
+    print_list(max_weeks)
 
 main()
 
