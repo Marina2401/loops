@@ -14,10 +14,11 @@ def pr(a):
 
 def comp(a, n):
     while True:
-        for i in range(n - 2):
+        for i in range(n):
             for j in range(i+1, n-1):
                 if a[i] == a[j]:
                     return a[i], a[j]
+
 
 def main():
     n = int(input('Введите количество элементов '))
@@ -26,6 +27,9 @@ def main():
     pr(a)
     print()
     c = comp(a, n)
-    print(c)
+    if not c:
+        print('нет повторяющихся элементов')
+    else:
+        print(c)
 
 main()
