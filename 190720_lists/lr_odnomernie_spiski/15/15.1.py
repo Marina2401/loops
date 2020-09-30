@@ -1,6 +1,6 @@
-#15.1. Определите, есть ли в списке повторяющиеся элементы, если да, то вывести на экран эти значения.
+#15.1. Определите, есть ли в списке повторяющиеся элементы, если да,
+# то вывести на экран эти значения.
 
-#ВОЗВРАЩАЕТ НЕ ВСЕ
 
 import random
 
@@ -13,11 +13,14 @@ def pr(a):
         print(i, end=' ')
 
 def comp(a, n):
-    while True:
-        for i in range(n):
-            for j in range(i+1, n-1):
-                if a[i] == a[j]:
-                    return a[i], a[j]
+    i = 0
+    b = []
+    while i < n:
+        for j in range(i+1, n):
+            if a[i] == a[j]:
+                b.append(a[i])
+        i += 1
+    return b
 
 
 def main():
@@ -27,7 +30,7 @@ def main():
     pr(a)
     print()
     c = comp(a, n)
-    if not c:
+    if len(c) == 0:
         print('нет повторяющихся элементов')
     else:
         print(c)

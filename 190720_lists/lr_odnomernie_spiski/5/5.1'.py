@@ -32,7 +32,6 @@ def main():
     ne = neg(a, n)
     if not ne:
         print('В исходном списке нет отрицательных чисел, стоящих рядом')
-    else:
-        print(ne)
+
 
 main()
