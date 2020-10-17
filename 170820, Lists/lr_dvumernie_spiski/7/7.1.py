@@ -17,4 +17,3 @@ def pr(a):
 
 def matrix(a, n):
 
-

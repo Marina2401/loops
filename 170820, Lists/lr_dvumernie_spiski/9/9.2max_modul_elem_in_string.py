@@ -19,13 +19,13 @@ for i in range(n):
 print()
 
 
-ma = -30
+ma = 0
 i_ma = 0
 j_ma = 0
 
 for i in range(n):
     for j in range(i, n):
-        if abs(a[i][j]) > ma:
+        if abs(a[i][j]) > abs(ma):
             ma = a[i][j]
             i_ma = i
             j_ma = j

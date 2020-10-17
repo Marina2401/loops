@@ -28,9 +28,10 @@ def main():
     #a[k][j] = a[k][j]//a[k][k]??
 
     k = int(input('введите номер строки '))
+    p = a[k][k]
     j = 0
     while j < n:
-        a[k][j] = a[k][j]//a[k][k]
+        a[k][j] = a[k][j]//p
         j += 1
 
     for i in range(n):
