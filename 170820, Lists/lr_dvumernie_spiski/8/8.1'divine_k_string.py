@@ -1,11 +1,6 @@
 #1. Задана матрица порядка n и число к. Разделить элементы k-й строки на диагональный элемент,
 # расположенный в этой строке.
-
-
-
 import random
-
-
 def pr(a, n):
     for i in range(n):
         for j in range(n):
@@ -39,7 +34,5 @@ def main():
             print(a[i][j], end='\t')
         print()
     print()
-
-
 
 main()
