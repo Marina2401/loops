@@ -1,6 +1,9 @@
+# coding=utf-8
 #13.2 Найти наибольший и наименьший элементы прямоугольной матрицы и поменять их местами.
 
 import random
+from aetypes import end
+
 
 def change(a, n):
     ma = -20

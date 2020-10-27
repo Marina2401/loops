@@ -1,4 +1,4 @@
-
+# coding=utf-8
 def calculate(first, second, choose):
     if choose == 1:
         res = first + second
@@ -9,7 +9,6 @@ def calculate(first, second, choose):
     elif choose == 4:
         res = first / second
     return res
-
 
 def input_choice(start, end):
     while True:
