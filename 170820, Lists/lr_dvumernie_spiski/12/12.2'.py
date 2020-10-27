@@ -3,16 +3,12 @@
 
 import random
 
-def str(a, m, n):
-    p = []
+def string(a, m, n):
     for i in range(m-1):
-        f = []
         for j in range(n):
-            a[i][j] = p[i][j] - p[m][j]
-            f.append(a)
-        p.append(f)
+            a[i][j] = a[i][j] - a[m-1][j]
 
-    return p
+
 
 def main():
     n = int(input('введите количество столбцов '))
@@ -30,7 +26,11 @@ def main():
         print()
     print()
 
-    s = str(a, m, n)
-    print(s)
+    string(a, m, n)
+    for i in range(m):
+        for j in range(n):
+            print(a[i][j], end=' ')
+        print()
+    print()
 
 main()

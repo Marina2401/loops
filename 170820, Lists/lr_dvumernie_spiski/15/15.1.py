@@ -5,12 +5,12 @@ import random
 
 def num(a, n, m, c, d):
     for i in range(n):
-        for j in range(m):
-            if a[i][j] == c:
-                i_num = i
-                for k in range(m):
-                    a[i_num][k] = d * a[i][k]
-    return a
+        # for j in range(m):
+        if c in a[i]:
+            # if a[i][j] == c:
+            #     i_num = i
+            for k in range(m):
+                a[i][k] = d * a[i][k]
 
 def main():
     n = int(input('введите количество строк '))

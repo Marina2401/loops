@@ -24,7 +24,6 @@ def change(a, n):
                 j_mi = j
     a[i_mi][j_mi], a[i_ma][j_ma] = a[i_ma][j_ma], a[i_mi][j_mi]
 
-    return a
 
 def main():
     n = int(input('Введите порядок матрицы '))
@@ -41,7 +40,7 @@ def main():
         print()
     print()
 
-    c = change(a, n)
+    change(a, n)
     for i in range(n):
         for j in range(n):
             print(a[i][j], end=' ')

@@ -4,21 +4,23 @@
 import random
 
 def odd(a, n):
+    max_sum = 0
+    max_raw = -1
     for i in range(n):
+        flag = True
         for j in range(n):
             if a[i][j] % 2 == 0:
-                return False
+                flag = False
+                break
 
-
-def sum(a, n):
-    o = odd(a, n)
-    s = 0
-    sm = 0
-    if o == True:
-        for i in range(n):
+        if flag == True:
+            sum = 0
             for j in range(n):
-                s = s + abs(a[i][j])
-
+                sum = sum + abs(a[i][j])
+            if sum > max_sum:
+                max_sum = sum
+                max_raw = i
+    return max_raw
 
 
 def main():
@@ -36,5 +38,10 @@ def main():
         print()
     print()
 
+    max_raw = odd(a, n)
+    if max_raw == -1:
+        print('Таких строк нет')
+    else:
+        print(max_raw)
 
 main()

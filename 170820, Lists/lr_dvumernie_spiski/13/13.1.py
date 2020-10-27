@@ -4,12 +4,8 @@
 import random
 
 def min(a, n, m):
-
-
-    d = []
     for i in range(0, n, 2):
-        mi = 20
-        c = []
+        mi = a[i][0]
         for j in range(m):
             if a[i][j] < mi:
                 mi = a[i][j]

@@ -6,20 +6,16 @@ import random
 def max(a, n):
     ma = -20
     i_ma = 0
-    j_ma = 0
     for i in range(n):
         if a[i][i] > ma:
             ma = a[i][i]
             i_ma = i
-            j_ma = i
     return i_ma
 
 def change(a, n, m):
     mx = max(a, n)
     for j in range(n):
         a[m][j], a[mx][j] = a[mx][j], a[m][j]
-
-    return a
 
 def main():
     n = int(input('Введите порядок матрицы '))
